@@ -1,0 +1,3 @@
+mrcImageCenterGet.py 
+引数について
+Excelファイル ファイル内のシート名 サブトモグラムを切り出す前の画像 x軸の幅 y軸の幅 z軸の幅
