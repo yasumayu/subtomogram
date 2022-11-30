@@ -30,4 +30,4 @@ for i in range(0,index-1,1):
 
 
 for i in range(0,index-1,1):
-    subprocess.run([f'{exel_sheet}', '-i', f'{raw_data}','-o', f'bilateral_sub{i}.mrc', '-Cx', f'{cx[i]}', '-Cy', f'{cy[i]}', '-Cz', f'{cz[i]}', '-Nx', f'{x_wide}', '-Ny', f'{y_wide}', '-Nz', f'{z_wide}'])
+    subprocess.run(['mrcImageCenterGet', '-i', f'{raw_data}','-o', f'bilateral_sub{i}.mrc', '-Cx', f'{cx[i]}', '-Cy', f'{cy[i]}', '-Cz', f'{cz[i]}', '-Nx', f'{x_wide}', '-Ny', f'{y_wide}', '-Nz', f'{z_wide}'])
