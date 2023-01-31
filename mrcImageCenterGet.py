@@ -16,11 +16,13 @@ z_wide = sys.argv[6]
 sheet = exel_data[f'{exel_sheet}']
 index = sheet.max_row
 
+num =[]
 cx = []
 cy = []
 cz = []
 
 for i in range(0,index-1,1):
+    num.insert(i,sheet.cell(row=i+2,column=1).value)
     #x軸の幅の開始地点(2列目B)
     cx.insert(i,sheet.cell(row=i+2,column=2).value)
     #y軸の幅の開始地点(3列目C)
@@ -30,4 +32,4 @@ for i in range(0,index-1,1):
 
 
 for i in range(0,index-1,1):
-    subprocess.run(['mrcImageCenterGet', '-i', f'{raw_data}','-o', f'bilateral_sub{i}.mrc', '-Cx', f'{cx[i]}', '-Cy', f'{cy[i]}', '-Cz', f'{cz[i]}', '-Nx', f'{x_wide}', '-Ny', f'{y_wide}', '-Nz', f'{z_wide}'])
+    subprocess.run(['mrcImageCenterGet', '-i', f'{raw_data}','-o', f'bilateral_sub{num[i]}.mrc', '-Cx', f'{cx[i]}', '-Cy', f'{cy[i]}', '-Cz', f'{cz[i]}', '-Nx', f'{x_wide}', '-Ny', f'{y_wide}', '-Nz', f'{z_wide}'])
